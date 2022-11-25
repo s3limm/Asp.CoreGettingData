@@ -1,0 +1,11 @@
+﻿@using GettingData.Models
+@model List<Products>
+
+<h1 style="text-align:center">Ürünler</h1>
+
+<ul>
+    @foreach (Products item in Model)
+    {
+        <li>@item.category  / @item.productName</li>
+    }
+</ul>

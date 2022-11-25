@@ -31,7 +31,7 @@ namespace GettingData
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("CustomRoute", "{controller=Home}/{action=Index}/{ID?}/{productName?}");
+                endpoints.MapControllerRoute("CustomRoute", "{controller=Home}/{action=Index}/{ID?}/{productName?}/{category?}");
                 //endpoints.MapGet("/", async context =>
                 //{
                 //    //endpoints.MapDefaultControllerRoute();

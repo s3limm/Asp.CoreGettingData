@@ -8,10 +8,10 @@ namespace GettingData.Controllers
     {
         List<Products> products = new List<Products>()
         {
-            new Products{ID=1 , productName="Televizyon"},
-            new Products{ID=2 , productName="Kulaklık"},
-            new Products{ID=3 , productName="Bilgisayar"},
-            new Products{ID=4 , productName="Telefon"},
+            new Products{ID=1 , category = "Elektronik",  productName = "Televizyon"},
+            new Products{ID=2 , category = "Ev Eşyaları", productName = "Sandalye"},
+            new Products{ID=3 , category = "Elektronik",  productName = "Bilgisayar"},
+            new Products{ID=4 , category = "Mutfak",      productName = "Mutfak Robotu"},
         };
 
         public IActionResult GetAllProducts()
@@ -28,5 +28,25 @@ namespace GettingData.Controllers
             }
             return View(product);
         }
+
+           public IActionResult GetAllCategory()
+        {
+            return View(products);
+        }
+
+             public IActionResult GetCategoryById(string cat)
+        {
+            Products product = products.Find(x => x.category == cat)
+                
+            if (product == null)
+            {
+                ViewBag.Error = "Aradığınız kategoride bir ürün bulunmamaktadır."
+            }
+            return View(product);
+        }
+            
+        
+
+
     }
 }
