@@ -1,0 +1,12 @@
+﻿@using GettingData.Models
+@model Products
+
+@if (ViewBag.Error != null)
+{
+    <h2>@ViewBag.Error</h2>
+}
+else
+{
+    <h2>Seçilen Kategordeki Ürünler</h2>
+    <h4>@Model.productName</h4>
+}
