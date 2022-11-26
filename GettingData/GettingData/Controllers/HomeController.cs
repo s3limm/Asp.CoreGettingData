@@ -9,5 +9,13 @@ namespace GettingData.Controllers
         {
             return "Uygulama çalışıyor";
         }
+
+
+        public string GetQueryString(string name)
+        {
+            return "Uygulama çalışıyor";
+        }
     }
+
+
 }

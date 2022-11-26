@@ -38,9 +38,9 @@ namespace GettingData.Controllers
 
         public IActionResult GetCategoryByRoute(string cat)
         {
-            Products product = products.Find(x => x.category == cat);
+            List<Products> product = products.FindAll(x => x.category == cat);
 
-            if (product == null)
+            if (product.Count == 0)
             {
                 ViewBag.Error = "Aradığınız kategoride bir ürün bulunmamaktadır.";
             }

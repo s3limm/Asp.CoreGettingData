@@ -1,5 +1,5 @@
 ﻿@using GettingData.Models
-@model Products
+@model List<Products>
 
 @if (ViewBag.Error != null)
 {
@@ -7,6 +7,13 @@
 }
 else
 {
-    <h2>Seçilen Kategordeki Ürünler</h2>
-    <h4>@Model.productName</h4>
+    <ul>
+        <h2>Seçilen Kategordeki Ürünler</h2>
+        @foreach (Products item in Model)
+        {
+        <li>@item.productName</li>
+        }
+    </ul>
+    
+   
 }
