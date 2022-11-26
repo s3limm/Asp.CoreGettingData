@@ -4,5 +4,6 @@
     {
         public int ID { get; set; }
         public string productName { get; set; }
+        public string category{ get; set; }
     }
 }

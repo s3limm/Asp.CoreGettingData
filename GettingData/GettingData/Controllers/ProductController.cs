@@ -8,10 +8,10 @@ namespace GettingData.Controllers
     {
         List<Products> products = new List<Products>()
         {
-            new Products{ID=1 , productName="Televizyon"},
-            new Products{ID=2 , productName="Kulaklık"},
-            new Products{ID=3 , productName="Bilgisayar"},
-            new Products{ID=4 , productName="Telefon"},
+            new Products{ID=1 , category ="Elektronik" , productName="Televizyon"},
+            new Products{ID=2 , category ="Ev Eşyaları" , productName="Kitap"},
+            new Products{ID=3 , category ="Elektronik" , productName="Bilgisayar"},
+            new Products{ID=4 , category ="Mutfak" , productName="Mutfak Robotu"},
         };
 
         public IActionResult GetAllProducts()
@@ -27,6 +27,11 @@ namespace GettingData.Controllers
                 ViewBag.Error = "Aradığınız aralıkta bir ürün bulunmamaktadır!";
             }
             return View(product);
+        }
+
+        public IActionResult GetPrductsCategory()
+        {
+            return View();
         }
     }
 }
