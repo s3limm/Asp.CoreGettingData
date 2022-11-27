@@ -1,0 +1,21 @@
+﻿@using GettingData.Models
+@model List<User>
+
+<h1 style="text-align:center">Kullanıcı listesi</h1>
+
+<ul>
+    @foreach (User item in Model)
+    {
+        <li>@item.userName / @item.passWord</li>
+    }
+</ul>
+
+<h2>Kullanıcı Ekle</h2>
+<form method="post" action="/user/adduser">
+    <label for="userName">Kullanıcı Adı :</label><br />
+    <input type="text" id="userName" name="userName" placeholder="Kullanıcı Adınız" /><br />
+    <label for="passWord">Şifreniz :</label><br />
+    <input type="text" id="passWord" name="passWord" placeholder="Şifreniz" /><br />
+    <input type="submit" value="Kullanıcı Ekle"/>
+</form>
+

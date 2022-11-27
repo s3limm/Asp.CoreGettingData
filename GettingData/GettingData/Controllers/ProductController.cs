@@ -16,9 +16,16 @@ namespace GettingData.Controllers
 
         };
 
+
         public IActionResult GetAllProducts()
         {
             return View(products);
+        }
+        [HttpPost]
+        public IActionResult AddProduct(Products product)
+        {
+            products.Add(product);
+            return View("GetAllProducts",products);
         }
 
         public IActionResult GetProductById(int id)

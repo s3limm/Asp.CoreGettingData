@@ -6,6 +6,16 @@
 <ul>
     @foreach (Products item in Model)
     {
-        <li>@item.productName</li>
+        <li>@item.category/ @item.productName</li>
     }
 </ul>
+
+
+<h2>Ürün Ekle</h2>
+<form method="post" action="/product/addproduct">
+    <label for="name">Ürün :</label><br />
+    <input type="text" id="productName" name="productName" placeholder="Ürün Adı" /><br />
+    <label for="name">Ketegori:</label><br />
+    <input type="text" id="category" name="category" placeholder="Kategori" /><br />
+    <input type="submit"  value="Ürün Ekle"/>
+</form>
